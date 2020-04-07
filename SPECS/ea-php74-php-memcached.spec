@@ -18,6 +18,7 @@ Source1: memcached.ini
 #Requires: memcached
 Requires: ea-libmemcached
 BuildRequires: cyrus-sasl-devel
+BuildRequires: autotools-latest-autoconf
 BuildRequires: ea-libmemcached ea-libmemcached-devel
 BuildRequires: %{scl_version} %{scl_version}-php-cli
 
@@ -30,6 +31,11 @@ to memcached servers.
 %setup -n php-memcached-%{version}
 
 %build
+
+%if 0%{rhel} < 7
+export PHP_AUTOCONF=/usr/bin/autoconf
+%endif
+
 scl enable %{scl_version} phpize
 scl enable %{scl_version} './configure --with-libmemcached-dir=/opt/cpanel/libmemcached --with-libdir=lib64'
 make

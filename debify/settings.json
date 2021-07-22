@@ -15,5 +15,8 @@
     "remove_from_requires": [
         "ea-libmemcached",
         "autotools-latest-autoconf"
-    ]
+    ],
+    "add_to_requires": {
+        "ea-php74-php-memcached": [ "libmemcached11" ]
+    }
 }

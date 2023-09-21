@@ -6,7 +6,7 @@
 Name: %{scl_version}-php-memcached
 Version: 3.1.3
 Summary: php-memcached extension for %{scl_version}
-%define release_prefix 7
+%define release_prefix 8
 Release: %{release_prefix}%{?dist}.cpanel
 License: MIT
 Group: Programming/Languages
@@ -20,7 +20,7 @@ Requires: ea-libmemcached
 BuildRequires: cyrus-sasl-devel
 BuildRequires: autotools-latest-autoconf
 BuildRequires: ea-libmemcached ea-libmemcached-devel
-BuildRequires: %{scl_version} %{scl_version}-php-cli
+BuildRequires: %{scl_version}
 Requires: %{scl_version}-php-common
 Requires: %{scl_version}-php-cli
 
@@ -55,6 +55,9 @@ install -m 644 %{SOURCE1} %{buildroot}/%{ext_prefix}/%{conf_dir}/
 %config /%{ext_prefix}/%{conf_dir}/memcached.ini
 
 %changelog
+* Thu Sep 21 2023 Dan Muey <dan@cpanel.net> - 3.1.3-8
+- ZC-11194: Remove unnecessary `BuildRequires` of php-cli
+
 * Fri Apr 07 2023 Julian Brown <julian.brown@cpanel.net> - 3.1.3-7
 - ZC-10320: Do not build on Ubuntu 22
 

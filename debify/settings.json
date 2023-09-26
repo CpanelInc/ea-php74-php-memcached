@@ -8,7 +8,6 @@
         "libargon2-dev",
         "libmemcached-dev",
         "libmemcached11",
-        "ea-php74-php-cli",
         "ea-php74-php-common",
         "ea-php74-php-devel"
     ],
